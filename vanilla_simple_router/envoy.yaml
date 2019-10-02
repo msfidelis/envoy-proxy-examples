@@ -16,7 +16,7 @@ static_resources:
             - name: local_service
               domains: ["*"]
               routes:
-              - match: { prefix: "/" }
+              - match: { prefix: "/bacon" }
                 route: { host_rewrite: www.google.com, cluster: service_google }
           http_filters:
           - name: envoy.router

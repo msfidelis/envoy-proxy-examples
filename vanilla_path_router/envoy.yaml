@@ -22,27 +22,33 @@ static_resources:
             - name: backends
               domains: ["*"]
               routes:
-              - match: { prefix: "/ifconfig" }
-                route: { host_rewrite: ifconfig.co, cluster: service_ifconfig }
+              - match: {
+                  prefix: "/bacon"
+                }
+                route: {
+                  host_rewrite: ˜baconipsum.com˜,
+                  prefix_rewrite: "/api/?type=meat-and-filler",
+                  cluster: service_bacon
+                }
 
           http_filters:
           - name: envoy.router
 
   clusters:
-  - name: service_ifconfig
-    connect_timeout: 0.25s
+  - name: service_bacon
+    connect_timeout: 15.0s
     type: LOGICAL_DNS
     # Comment out the following line to test on v6 networks
     dns_lookup_family: V4_ONLY
     lb_policy: ROUND_ROBIN
     load_assignment:
-      cluster_name: service_ifconfig
+      cluster_name: service_bacon
       endpoints:
       - lb_endpoints:
         - endpoint:
             address:
               socket_address:
-                address: ifconfig.co
-                port_value: 80
+                address: baconipsum.com
+                port_value: 443
     tls_context:
-      sni: ifconfig.co
+      sni: baconipsum.com
