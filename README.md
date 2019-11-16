@@ -16,7 +16,7 @@
 * [Simple router to Google](./vanilla_simple_router)
 * [Setup Envoy Admin](./vanilla_envoy_admin)
 * [Path routing](./vanilla_path_router)
-* [Proxy retry](./vanilla_proxy_retry)
+* [Proxy with retry policy](./vanilla_proxy_retry)
 * [Proxy to HTTPS backends (SNI)](./vanilla_simple_router)
 
 
