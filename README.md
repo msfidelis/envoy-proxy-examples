@@ -11,14 +11,24 @@
 
 > Study Examples to use Envoy Proxy
 
-## References 
+## Pratical Examples
+
+* [Simple router to Google](./vanilla_simple_router)
+* [Setup Envoy Admin](./vanilla_envoy_admin)
+* [Path routing](./vanilla_path_router)
+* [Proxy retry](./vanilla_proxy_retry)
+* [Proxy to HTTPS backends (SNI)](./vanilla_simple_router)
+
+
+## References
 
 * [Envoy Proxy on Dockerhub](https://hub.docker.com/u/envoyproxy/)
 
 ## Install
 
 ```sh
-docker build -t example_name . 
+cd example_name
+docker build -t example_name .
 ```
 
 ## Author
