@@ -1,0 +1,18 @@
+version: "3"
+services:
+  status_app:
+    image: msfidelis/http-status-code
+    ports:
+      - "9090:8080"
+    networks:
+      - developer
+
+  envoy_proxy:
+    build: .
+    ports:
+      - "8080:8080"
+    networks:
+      - developer
+
+networks:
+  developer:
