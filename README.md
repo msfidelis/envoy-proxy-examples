@@ -11,7 +11,7 @@
 
 > Study Examples to use Envoy Proxy
 
-## Pratical Examples
+## Examples
 
 * [Simple router to Google](./vanilla_simple_router)
 * [Setup Envoy Admin](./vanilla_envoy_admin)
