@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to Envoy Proxy Examples 👋</h1>
+<h1 align="center">Envoy Proxy use cases  👋</h1>
 <p>
   <img src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="LICENSE">
@@ -9,16 +9,18 @@
   </a>
 </p>
 
-> Study Examples to use Envoy Proxy
+![envoy](.github/envoy-proxy-logo.png)
+
+> Pratical Use Cases for Envoy Proxy
 
 ## Examples
 
-* [Simple router to Google](./vanilla_simple_router)
-* [Setup Envoy Admin](./vanilla_envoy_admin)
-* [Path routing](./vanilla_path_router)
-* [Proxy with retry policy](./vanilla_proxy_retry)
-* [Proxy to HTTPS backends (SNI)](./vanilla_simple_router)
-* [Envoy as Load Balancer](./vanilla_load_balancer)
+* [How o use Envoy Proxy as simple proxy to website](./vanilla_simple_router)
+* [How to enable Envoy Proxy admin](./vanilla_envoy_admin)
+* [How to configure HTTP path routing on Envoy Proxy](./vanilla_path_router)
+* [How to configure retry policy on Envoy Proxy](./vanilla_proxy_retry)
+* [How to use a HTTPS backend from Envoy Proxy (SNI)](./vanilla_proxy_to_https)
+* [How to use Envoy as HTTP Load Balancer](./vanilla_load_balancer)
 
 
 ## References
