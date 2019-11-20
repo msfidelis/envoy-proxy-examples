@@ -18,6 +18,7 @@
 * [Path routing](./vanilla_path_router)
 * [Proxy with retry policy](./vanilla_proxy_retry)
 * [Proxy to HTTPS backends (SNI)](./vanilla_simple_router)
+* [Envoy as Load Balancer](./vanilla_load_balancer)
 
 
 ## References
