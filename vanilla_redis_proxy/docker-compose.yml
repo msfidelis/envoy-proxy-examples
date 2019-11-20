@@ -1,0 +1,19 @@
+version: "3"
+services:
+
+  redis_1:
+    image: redis:5.0.6-alpine
+    ports:
+      - "6379:6379"
+    networks:
+      - developer
+      
+  envoy_proxy:
+    build: .
+    ports:
+      - "8080:8080"
+    networks:
+      - developer
+
+networks:
+  developer:
