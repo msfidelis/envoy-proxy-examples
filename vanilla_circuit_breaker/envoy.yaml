@@ -1,0 +1,46 @@
+static_resources:
+  listeners:
+  - name: listener_0
+    address:
+      socket_address: { address: 0.0.0.0, port_value: 8080 }
+    filter_chains:
+    - filters:
+      - name: envoy.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.config.filter.network.http_connection_manager.v2.HttpConnectionManager
+          stat_prefix: ingress_http
+          codec_type: AUTO
+          route_config:
+            name: local_route
+            virtual_hosts:
+
+            - name: local_service
+              domains: ["*"]
+              routes:
+
+              - match:
+                  prefix: "/"
+                route:
+                  cluster: service_example
+
+          http_filters:
+          - name: envoy.router
+            config: {}
+
+  clusters:
+  - name: service_example
+    connect_timeout: 1s
+    type: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+
+    # Circuit Breaker Examples
+    circuit_breakers:
+      thresholds:
+        max_connections: 1
+        max_pending_requests: 1
+        max_requests: 1
+
+    hosts:
+    - socket_address:
+        address: service_example
+        port_value: 8000
