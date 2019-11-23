@@ -1,0 +1,19 @@
+version: "3"
+services:
+
+  service_example:
+    image: msfidelis/micro-api:v2
+    ports:
+      - "8001:8000"
+    networks:
+      - developer
+
+  envoy_proxy:
+    build: .
+    ports:
+      - "8080:8080"
+    networks:
+      - developer
+
+networks:
+  developer:
