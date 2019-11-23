@@ -19,6 +19,7 @@
 * [How to enable Envoy Proxy admin](./vanilla_envoy_admin)
 * [How to configure HTTP path routing on Envoy Proxy](./vanilla_path_router)
 * [How to configure HTTP routing by header on Envoy Proxy](./vanilla_header_router)
+* [How to configure Weighted load balancing on Envoy Proxy](./vanilla_weighted_load_balancer)
 * [How to configure retry policy on Envoy Proxy](./vanilla_proxy_retry)
 * [How to use a HTTPS backend from Envoy Proxy (SNI)](./vanilla_proxy_to_https)
 * [How to use Envoy as HTTP Load Balancer](./vanilla_load_balancer)

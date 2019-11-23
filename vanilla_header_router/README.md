@@ -29,10 +29,6 @@ docker-compose up --force-recreate
     # ----
 ```
 
-```
-docker-compose up
-```
-
 ### Using version 1
 
 ```bash
