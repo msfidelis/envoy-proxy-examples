@@ -24,8 +24,8 @@
 * [How to use a HTTPS backend from Envoy Proxy (SNI)](./vanilla_proxy_to_https)
 * [How to use Envoy as HTTP Load Balancer](./vanilla_load_balancer)
 * [How to implement circuit breaker on Envoy Proxy](./vanilla_circuit_breaker)
-* [How to add Headers on Response on Envoy Proxy](./vanilla_add_response_headers)
-
+* [How to add or remove headers on response with Envoy Proxy](./vanilla_add_response_headers)
+* [How to add security headers by default on Envoy Proxy](./vanilla_security_headers)
 
 ## References
 
