@@ -11,11 +11,11 @@
 
 ![envoy](.github/envoy-proxy-logo.png)
 
-> Pratical Use Cases for Envoy Proxy
+> Practical use cases for Envoy Proxy
 
 ## Examples
 
-* [How o use Envoy Proxy as simple proxy to website](./vanilla_simple_router)
+* [How to use Envoy Proxy as simple proxy to website](./vanilla_simple_router)
 * [How to enable Envoy Proxy admin](./vanilla_envoy_admin)
 * [How to configure HTTP path routing on Envoy Proxy](./vanilla_path_router)
 * [How to configure HTTP routing by header on Envoy Proxy](./vanilla_header_router)
