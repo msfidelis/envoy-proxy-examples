@@ -1,10 +1,15 @@
 static_resources:
   listeners:
+  # Declaração do Listener
   - name: listener_0
     address:
       socket_address: { address: 0.0.0.0, port_value: 8080 }
+
+    # Filtros HTTP
     filter_chains:
     - filters:
+
+      # Filtro HTTP
       - name: envoy.http_connection_manager
         typed_config:
           "@type": type.googleapis.com/envoy.config.filter.network.http_connection_manager.v2.HttpConnectionManager
@@ -15,17 +20,19 @@ static_resources:
             virtual_hosts:
             - name: local_service
               domains: ["*"]
+
+              # Declaração de uma rota
               routes:
-              - match: { prefix: "/bacon" }
+              - match: { prefix: "/" }
                 route: { host_rewrite: www.google.com, cluster: service_google }
           http_filters:
           - name: envoy.router
 
+  # Cluster / Backend
   clusters:
   - name: service_google
     connect_timeout: 0.25s
     type: LOGICAL_DNS
-    # Comment out the following line to test on v6 networks
     dns_lookup_family: V4_ONLY
     lb_policy: ROUND_ROBIN
     load_assignment:
@@ -34,8 +41,12 @@ static_resources:
       - lb_endpoints:
         - endpoint:
             address:
+
+              # Endereço do Backend
               socket_address:
                 address: www.google.com
                 port_value: 443
+
+    # Resolução do sni para troca do certificado
     tls_context:
       sni: www.google.com
