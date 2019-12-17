@@ -26,7 +26,7 @@ static_resources:
                   retry_policy:
                     retry_on: "5xx"
                     num_retries: 10
-                    per_try_timeout_ms: 2000
+                    per_try_timeout: 2s
               # ----
 
           http_filters:
