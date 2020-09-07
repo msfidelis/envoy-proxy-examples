@@ -1,9 +1,17 @@
 version: "3"
 services:
-  status_app:
-    image: msfidelis/http-status-code:v1
+
+  service_example:
+    image: fidelissauro/chip:v1
     ports:
-      - "9090:8080"
+      - "8001:8000"
+    networks:
+      - developer
+
+  service_example_fail:
+    image: fidelissauro/chip:v2-error
+    ports:
+      - "8002:8000"
     networks:
       - developer
 
