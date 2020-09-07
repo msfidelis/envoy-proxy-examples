@@ -2,9 +2,16 @@ version: "3"
 services:
 
   service_example:
-    image: msfidelis/micro-api:v1
+    image: fidelissauro/chip:v1
     ports:
       - "8001:8000"
+    networks:
+      - developer
+
+  service_example_fail:
+    image: fidelissauro/chip:v2-error
+    ports:
+      - "8002:8000"
     networks:
       - developer
 

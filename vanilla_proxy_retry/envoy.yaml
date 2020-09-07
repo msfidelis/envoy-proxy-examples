@@ -42,6 +42,3 @@ static_resources:
     - socket_address:
         address: service_example
         port_value: 8080
-    - socket_address:
-        address: service_example_fail
-        port_value: 8080

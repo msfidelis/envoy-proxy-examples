@@ -16,42 +16,39 @@ curl http://0.0.0.0:8080/random/500
 ## Test Service Directly
 
 ``` bash
-while true; do curl localhost:9090/random/500; echo; done;
+while true; do curl localhost:9090/healthcheck/fault; echo; done;
 
 // ---
 
-{"code":500,"message":"Internal Server Error"}
-{"code":200,"message":"Success"}
-{"code":200,"message":"Success"}
-{"code":200,"message":"Success"}
-{"code":500,"message":"Internal Server Error"}
-{"code":500,"message":"Internal Server Error"}
-{"code":200,"message":"Success"}
-{"code":500,"message":"Internal Server Error"}
-{"code":200,"message":"Success"}
-{"code":500,"message":"Internal Server Error"}
-{"code":500,"message":"Internal Server Error"}
+{"status":503,"description":"fault injection"}
+{"status":200,"description":"fault injection"}
+{"status":200,"description":"fault injection"}
+{"status":200,"description":"fault injection"}
+{"status":200,"description":"fault injection"}
+{"status":200,"description":"fault injection"}
+{"status":503,"description":"fault injection"}
+{"status":200,"description":"fault injection"}
+{"status":503,"description":"fault injection"}
 ```
 
 ## Test the same service behind front proxy with retry policy
 
 ``` bash
-while true; do curl localhost:8080/random/500; echo; done;
+while true; do curl localhost:8080/healthcheck/fault; echo; done;
 
 // ---
 
-{"code":200,"message":"Success"}
-{"code":200,"message":"Success"}
-{"code":200,"message":"Success"}
-{"code":200,"message":"Success"}
-{"code":200,"message":"Success"}
-{"code":200,"message":"Success"}
-{"code":200,"message":"Success"}
-{"code":200,"message":"Success"}
-{"code":200,"message":"Success"}
-{"code":200,"message":"Success"}
-{"code":200,"message":"Success"}
-{"code":200,"message":"Success"}
-{"code":200,"message":"Success"}
-{"code":200,"message":"Success"}
+{"status":200,"description":"fault injection"}
+{"status":200,"description":"fault injection"}
+{"status":200,"description":"fault injection"}
+{"status":200,"description":"fault injection"}
+{"status":200,"description":"fault injection"}
+{"status":200,"description":"fault injection"}
+{"status":200,"description":"fault injection"}
+{"status":200,"description":"fault injection"}
+{"status":200,"description":"fault injection"}
+{"status":200,"description":"fault injection"}
+{"status":200,"description":"fault injection"}
+{"status":200,"description":"fault injection"}
+{"status":200,"description":"fault injection"}
 ```

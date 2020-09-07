@@ -22,6 +22,10 @@ static_resources:
                   prefix: "/"
                 route:
                   cluster: service_example
+                  retry_policy:
+                    retry_on: "5xx"
+                    num_retries: 10
+                    per_try_timeout: 2s
 
           http_filters:
           - name: envoy.router
@@ -39,8 +43,12 @@ static_resources:
         max_connections: 1
         max_pending_requests: 1
         max_requests: 1
+        max_retries: 2
 
     hosts:
     - socket_address:
         address: service_example
-        port_value: 8000
+        port_value: 8080
+    - socket_address:
+        address: service_example_fail
+        port_value: 8080
