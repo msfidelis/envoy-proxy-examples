@@ -38,12 +38,10 @@ static_resources:
     type: LOGICAL_DNS
     dns_lookup_family: V4_ONLY
     lb_policy: ROUND_ROBIN
-    load_assignment:
-      cluster_name: service_example
-      endpoints:
-      - lb_endpoints:
-        - endpoint:
-            address:
-              socket_address:
-                address: status_app
-                port_value: 8080
+    hosts:
+    - socket_address:
+        address: service_example
+        port_value: 8080
+    - socket_address:
+        address: service_example_fail
+        port_value: 8080
